@@ -55,6 +55,15 @@ with open(csvpath) as csvfile:
 
 
   # The greatest decrease in losses (date and amount) over the entire period
-  print(f"Greatest decrease: {str(decrease_date)} $ {greatest_decrease}")
+  print(f"Greatest increase: {str(increase_date)} $ {greatest_increase}")
 
-output_file = os.path.join("output.txt")
+output_pybank = os.path.join("output.txt")
+with open(output_pybank, 'w') as txtfile:
+  txtfile.write("Financial Analysis")
+  txtfile.write("\n-------------------------")
+  txtfile.write(f"\nTotal Months: {months}")
+  txtfile.write(f"\nTotal: $ {total}")
+  txtfile.write(f"\nAverage  Change: $ {total_change/(months-1)}")
+  txtfile.write(f"\nGreatest increase: {str(increase_date)} $ {greatest_increase}")
+  txtfile.write(f"\nGreatest increase: {str(increase_date)} $ {greatest_increase}")
+  
