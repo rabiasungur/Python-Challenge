@@ -29,7 +29,7 @@ with open(csvpath) as csvfile:
     current_profitloss = int(row[1])
     change = current_profitloss - pre_profitloss
     profitloss_changes.append(change)
-    total_change = total_change + change #- int(row[1])
+    total_change = total_change + change 
     pre_profitloss = current_profitloss
     #ave_change = total_change/(months-1)
 
@@ -45,7 +45,7 @@ with open(csvpath) as csvfile:
   print(f"Total Months: {months}")
     
   # The net total amount of "Profit/Losses" over the entire period
-  print(f"Total Months: {total}")
+  print(f"Total: $ {total}")
 
   # The average of the changes in "Profit/Losses" over the entire period
   print(f"Average  Change: $ {total_change/(months-1)}")
@@ -56,3 +56,5 @@ with open(csvpath) as csvfile:
 
   # The greatest decrease in losses (date and amount) over the entire period
   print(f"Greatest decrease: {str(decrease_date)} $ {greatest_decrease}")
+
+output_file = os.path.join("output.txt")
